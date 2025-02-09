@@ -21,7 +21,20 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200") // Allow Angular app
+                  .AllowAnyMethod()  // Allow GET, POST, PUT, DELETE
+                  .AllowAnyHeader()  // Allow any headers
+                  .AllowCredentials(); // Allow cookies/authentication headers if needed
+        });
+});
+
 var app = builder.Build();
+app.UseCors("AllowAngular");
 
 if (app.Environment.IsDevelopment())
 {
