@@ -1,0 +1,24 @@
+@DriverStandingsWebService_HostAddress = https://localhost:7289
+
+GET {{DriverStandingsWebService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{DriverStandingsWebService_HostAddress}}/api/driverstandingsapi?year=2024
+Accept: application/xml
+
+###
+
+GET {{DriverStandingsWebService_HostAddress}}/api/driverstandingsapi?year=2024
+Accept: application/json
+
+###
+
+GET {{DriverStandingsWebService_HostAddress}}/api/driverstandingsapi?year=2024
+Content-Type: text/plain
+
+###
+
+GET {{DriverStandingsWebService_HostAddress}}/api/driverstandingsapi?year=2024
+Content-Type: text/plain
